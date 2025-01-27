@@ -135,11 +135,6 @@ namespace Restauranteer
             if (!Config.ModEnabled || !Config.RestaurantLocations.Contains(location.Name))
                 return false;
 
-            if (Config.RequireEvent && !Game1.player.eventsSeen.Contains("980558"))
-            {
-                Game1.drawObjectDialogue(SHelper.Translation.Get("low-friendship"));
-                return false;
-            }
 
             location.ActivateKitchen();
             return true;
